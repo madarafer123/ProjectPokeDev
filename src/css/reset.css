@@ -1,0 +1,11 @@
+/* Remove the default padding and margins from all elements and set the box model to include borders and padding within the dimensions */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Remove the default formatting from lists, eliminating list markers (bullets, numbering, etc.) */
+ul {
+  list-style-type: none;
+}

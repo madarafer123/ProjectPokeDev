@@ -1,0 +1,174 @@
+/* Define the font for the body of the page and a background image */
+body {
+  font-family: "Poppins", sans-serif;
+  background-image: url("../imagens/background.png");
+  background-size: contain; /* Adjusts the size of the image to fit the screen */
+}
+
+/* Creates a blur effect overlay on the background of the page */
+body::before {
+  content: ""; /* Empty element created before the body content */
+  position: fixed; /* Fixes the element in the background of the page */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensures the background stays behind the main content */
+  backdrop-filter: blur(8px); /* Applies the blur effect */
+}
+
+/* Defines the structure of the main area, centring the content */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensures that the main occupies at least 100% of the window height */
+}
+
+/* Flexible structure for the .pokedevs elements with spacing between them */
+.pokedevs {
+  display: flex;
+  gap: 30px; /* Space between the elements */
+  padding: 30px 0;
+}
+
+/* Defines the basic style of the cards, hiding them initially */
+.cartao-pokedev {
+  display: none;
+  max-width: 360px;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; /* Soft shadow for the card */
+}
+
+/* Shows the card when the 'aberto' class is added */
+.cartao-pokedev.aberto {
+  display: block;
+}
+
+/* Adjusts the image within the card, filling the entire area */
+.cartao-pokedev img {
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
+}
+
+/* Internal spacing at the top of the card */
+.cartao-pokedev .cartao-topo {
+  padding: 30px 40px 0;
+}
+
+/* Small space below the name of the card */
+.cartao-pokedev .nome {
+  margin-bottom: 5px;
+}
+
+/* Style for the type of pokedev, with a white background and slight transparency */
+.cartao-pokedev .tipo {
+  background-color: #ffffff;
+  font-size: 12px;
+  opacity: 0.7;
+  border-radius: 10px;
+  padding: 2px 10px;
+}
+
+/* Styles for the card details, with flexible alignment */
+.cartao-pokedev .detalhes {
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style for the information section of the card, with a white background and rounded corners at the bottom */
+.cartao-pokedev .cartao-informacoes {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  padding: 80px 30px 50px;
+  margin-top: -70px; /* Raises the section slightly */
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Style for the titles within the information section */
+.cartao-pokedev .cartao-informacoes h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #6b727a; /* Grey bottom line */
+}
+
+/* Description section with vertical scroll for long texts */
+.cartao-pokedev .cartao-informacoes .descricao {
+  padding: 0 10px;
+  font-size: 15px;
+  max-height: 150px; /* Height limit with scroll if the content exceeds */
+  overflow-y: scroll; /* Scroll only vertically */
+}
+
+/* Specific colours for different types of pokedevs */
+.tipo-eletrico {
+  background-color: #fcc719;
+}
+
+.tipo-fogo {
+  background-color: #f15000d2;
+}
+
+.tipo-agua {
+  background-color: #015c98;
+}
+
+.tipo-grama {
+  background-color: #49d0b0;
+}
+
+.tipo-trevas {
+  background-color: #ba68c8;
+}
+
+.tipo-fada {
+  background-color: #c29791;
+}
+
+/* Limits the maximum width of the listing section */
+.listagem {
+  max-width: 200px;
+}
+
+/* Defines the size of the images within the listing */
+.listagem .pokedev img {
+  width: 25%;
+}
+
+/* Style for the items in the pokedev listing */
+.listagem .pokedev {
+  background-color: #6b727a; /* Default background colour */
+  color: #ffffff; /* White text */
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+  margin-bottom: 10px;
+  cursor: pointer; /* Indicates that the item is clickable */
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  min-height: 70px; /* Minimum height for the items */
+
+  transition: 0.15s ease-in-out; /* Smooth transition on hover */
+}
+
+/* Slightly increases the size of the item when hovered over */
+.listagem .pokedev:hover {
+  transform: scale(1.05);
+}
+
+/* Space for the text within each item of the list */
+.listagem .pokedev span {
+  padding-right: 20px;
+}
+
+/* Style for the active (selected) item in the pokedev listing */
+.listagem .pokedev.ativo {
+  background-color: #fa6668; /* Highlight colour for the active pokedev */
+}

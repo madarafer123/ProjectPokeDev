@@ -1,0 +1,47 @@
+/* Applies when the screen width is a maximum of 750px (for mobile devices and small tablets) */
+@media (max-width: 750px) {
+  /* In the .pokedevs class, arrange the items in a column, centre them, and add vertical padding */
+  .pokedevs {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+  }
+
+  /* Set the maximum width of character cards (.cartao-pokedev) to 300px to fit smaller screens */
+  .cartao-pokedev {
+    max-width: 300px;
+  }
+
+  /* Adjust the internal padding of the card information and position the content higher for better layout overlap */
+  .cartao-pokedev .cartao-informacoes {
+    padding: 60px 30px 30px;
+    margin-top: -50px;
+  }
+
+  /* Reduce the font size of the information titles in the cards (h3) for better readability on mobile devices */
+  .cartao-pokedev .cartao-informacoes h3 {
+    font-size: 16px;
+  }
+
+  /* Limit the maximum width of the listing navigation to 360px */
+  .listagem {
+    max-width: 360px;
+  }
+
+  /* Set the width of each character item in the navigation to 45% of the container width and adjust the border rounding */
+  .listagem .pokedev {
+    width: 45%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-bottom: 0;
+    border-radius: 8px;
+  }
+
+  /* Use flexbox to organise the list items (ul) centrally, with line breaks when necessary, and spacing between the items */
+  .listagem ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
